@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+    <h1>Bem vindo {{ request.user }}</h1>
+    <h2>Seu perfil está assim:</h2>
+    <ul>
+        <li>Idade: {{ request.user.perfil.idade }}</li>
+        <li>Endereco {{ request.user.perfil.endereco }}</li>
+        <li><a href="{% url 'editar-perfil' request.user.id %}">EDITAR PERFIL</a></li>
+    </ul>
+</body>
+</html>

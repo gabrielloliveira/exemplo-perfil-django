@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Perfil</title>
+</head>
+<body>
+    <h1>Perfil de {{ request.user }}</h1>
+    <form action="{% url 'salvar' request.user.id %}" method="post">
+        {% csrf_token %}
+        <p>
+            <label for="">Idade: </label>
+            <input type="number" name="idade" value="{{ usuario.perfil.idade }}">
+        </p>
+        <p>
+            <label for="">Endereco: </label>
+            <input type="text" name="endereco" value="{{ usuario.perfil.endereco }}">
+        </p>
+        <p><button>Salvar</button></p>
+    </form>
+</body>
+</html>
